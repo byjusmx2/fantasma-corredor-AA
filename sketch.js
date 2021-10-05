@@ -43,32 +43,32 @@ function draw() {
     if(keyDown("")){
         ghost.x = ghost.x - 3;
 
-      // write a code to move left when left arrow is pressed
+      //escribir el código para mover al fantasma a la izquierda al presionar la flecha izquierda
     }
     if(keyDown("")){
   
           ghost.x = ghost.x + 3;
 
-      // write a code to move left when right arrow is pressed
+      //escribir el código para mover el fantasma a la derecha al presionar la flecha derecha 
       
     }
     if(keyDown("")){
   
          ghost.velocityY = -10;
 
-      // write a code to move up when space arrow is pressed
+      //escribir el código para mover el fantasma hacia arriba al presionar la flecha arriba 
       
     }
   
   ghost.velocityY = ghost.velocityY + 0.8;
   
    
-      //write a condition for infinte scrolling tower
+      //escribir una condición para desplazar infinitamente la torre
     
       spawnDoors();
 
   
-//write a code to make invisibleBlockGroup collide with ghost destroy the ghost and make gamestate to end.
+//escribir el código para hacer que invisibleBlockGroup colisione con el fantasma y cambiar gamestate a end.
      if(climbersGroup.isTouching(ghost)){
       ghost.velocityY = 0;
     }
@@ -84,20 +84,20 @@ function draw() {
     stroke("yellow");
     fill("yellow");
     textSize(30);
-    text("Game Over", 230,250)
+    text("Fin del juego", 230,250)
   }
 }
 
 function spawnDoors()
  {
-  //write code here to spawn the clouds
+  //escribir aquí el código para aparecer los obstáculos
   if (frameCount % 240 === 0) {
     var door = createSprite(200, -50);
     var climber = createSprite(200,10);
     var invisibleBlock = createSprite(200,15);
     invisibleBlock.width = climber.width;
     invisibleBlock.height = 2;
-    //add the random function
+    //agregar la función random
     //
     door.addImage(doorImg);
     climber.addImage(climberImg);
@@ -106,18 +106,18 @@ function spawnDoors()
     climber.velocityY = 1;
     invisibleBlock.velocityY = 1;
 
-    //change the depth of the ghost and door
+    //cambiar la profundidad del fantasma y de la puerta
     
      
 ghost.depth = door.depth;
     ghost.depth =1;
     
-    //assign lifetime for the  door, climber and invisible block
+    //asignar lifetime a door, climber y invisible block
 
  .lifetime = 800;
     .lifetime = 800;
     .lifetime = 800;
-    //add each obstacle to the group obstaclesGroup.add(obstacle);here  obstacle are door, climber and invisible block
+    //agregar cada obstáculo al grupo obstaclesGroup.add(obstacle); aquí los obstáculos son door, climber, invisible block
     
      doorsGroup.add();
     invisibleBlock.debug = true;
